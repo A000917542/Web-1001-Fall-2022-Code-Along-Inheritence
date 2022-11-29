@@ -58,6 +58,36 @@ namespace Web_1001_Fall_2022_Code_Along_Inheritence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("71754de9-3064-4ba7-93be-344345d4a6e1"),
+                            Description = "",
+                            Name = "Test 1",
+                            Price = 2.00m
+                        },
+                        new
+                        {
+                            Id = new Guid("ed7d2a3c-5e3e-4cad-bd43-907dc0d6f767"),
+                            Description = "",
+                            Name = "Test 2",
+                            Price = 3.00m
+                        },
+                        new
+                        {
+                            Id = new Guid("09f561b4-def2-4cbc-95ac-1a930aabe6b4"),
+                            Description = "",
+                            Name = "Test 2",
+                            Price = 1.00m
+                        },
+                        new
+                        {
+                            Id = new Guid("b77cc9b8-e33d-45a2-91c0-eb397c8549ff"),
+                            Description = "",
+                            Name = "Test 2",
+                            Price = 7.00m
+                        });
                 });
 
             modelBuilder.Entity("Web_1001_Fall_2022_Code_Along_Inheritence.Models.ShoppingCart", b =>
@@ -86,6 +116,20 @@ namespace Web_1001_Fall_2022_Code_Along_Inheritence.Migrations
                     b.HasKey("Email");
 
                     b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Email = "example@example.com",
+                            Address = "Address 1",
+                            Name = "Example 1"
+                        },
+                        new
+                        {
+                            Email = "example2@example.com",
+                            Address = "Address 2",
+                            Name = "Example 2"
+                        });
                 });
 
             modelBuilder.Entity("ProductShoppingCart", b =>

@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<StoreContext>(options => {
-    options.UseSqlServer("Default");
+    options.UseSqlServer("Server=DESKTOP-GRF3PQH;Database=ShoppingDemo;Trusted_Connection=True;");
 });
 
 var app = builder.Build();

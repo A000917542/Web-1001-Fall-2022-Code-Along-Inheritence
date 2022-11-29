@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Web_1001_Fall_2022_Code_Along_Inheritence.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initialWdata : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -75,6 +75,26 @@ namespace Web_1001_Fall_2022_Code_Along_Inheritence.Migrations
                         principalTable: "ShoppingCarts",
                         principalColumn: "Email",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "Description", "Name", "Price" },
+                values: new object[,]
+                {
+                    { new Guid("09f561b4-def2-4cbc-95ac-1a930aabe6b4"), "", "Test 2", 1.00m },
+                    { new Guid("71754de9-3064-4ba7-93be-344345d4a6e1"), "", "Test 1", 2.00m },
+                    { new Guid("b77cc9b8-e33d-45a2-91c0-eb397c8549ff"), "", "Test 3", 7.00m },
+                    { new Guid("ed7d2a3c-5e3e-4cad-bd43-907dc0d6f767"), "", "Test 4", 3.00m }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Email", "Address", "Name" },
+                values: new object[,]
+                {
+                    { "example@example.com", "Address 1", "Example 1" },
+                    { "example2@example.com", "Address 2", "Example 2" }
                 });
 
             migrationBuilder.CreateIndex(
